@@ -7,7 +7,9 @@
 
 
 <template>
+    <header>
     <div>
         <h1 class="text-center">{{ titoloProps }}</h1>
     </div>
+    </header>
 </template>
