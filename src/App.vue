@@ -38,7 +38,7 @@
 </script>
 
 <template>
-  <HeaderComp :titoloProps=" 'yu-gi-ho API' "/>
+  <HeaderComp :titoloProps=" 'YU-GI-HO API' "/>
   <main class="container">
     <ContaPersonaggi/>
     <PersonagiComp/>

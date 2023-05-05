@@ -11,9 +11,9 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="bg-dark p-2 ">
         <h3 class="red">
-            il mio deck è formato da: {{ store.arrayCarte.length }} carte scarsissime
+           IL MIO DECK E' COMPOSTO DA: {{ store.arrayCarte.length }} CARTE SCARSISSIME
         </h3>
     </div>
 </template>
