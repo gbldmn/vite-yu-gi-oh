@@ -6,7 +6,9 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #D48F38;
+    background-image: url('/public/img/Kez0Br\ \(1\).jpg');
+    
+ 
 }
 header {
     width: 100%;
@@ -15,4 +17,29 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+img {
+    width: 200px;
+    height: 250px;
+}
+.orange {
+    background-color: #D48F38;
+}
+h3 {
+    font-size: 17px;
+} h2 {
+    font-size: 12px;
+}
+.bg {
+    background-color:antiquewhite;
+    border-radius: 30px;
+}
+.bg:hover {
+    opacity: 0.8;
+}
+.red {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: fantasy;
+    color:beige
 }
