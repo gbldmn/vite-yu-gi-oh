@@ -24,15 +24,36 @@
         },
         methods: {
             chiamataApi(){
-                            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=9&offset=0')
-                .then( (res) =>{
-                   console.log(res.data.data)
+                // //             axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=9&offset=0')
+                // // .then( (res) =>{
+                // //    console.log(res.data.data)
 
 
 
-                   const datiApi = res.data.data
-                   this.store.arrayCarte = datiApi
-                })
+                // //    const datiApi = res.data.data
+                // //    this.store.arrayCarte = datiApi
+                // // })
+
+                if( store.testoRicerca !== '' ){
+                    axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${store.testoRicerca}&num=9&offset=0`) 
+                    .then((res)=> {
+                        const datiApi = res.data.data
+                        store.arrayCarte = datiApi
+                    })
+                } else {
+                     axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=9&offset=0')
+                    .then( (res) =>{
+                     console.log(res.data.data)
+
+
+
+                    const datiApi = res.data.data
+                    this.store.arrayCarte = datiApi
+                    })
+                }
+
+
+               
             }
         }
     }
@@ -42,7 +63,7 @@
 <template>
   
   <HeaderComp :titoloProps=" 'YU-GI-HO API' "/>
-  <RicercaPersonaggi class="container"/>
+  <RicercaPersonaggi @nomeEmit="chiamataApi" class="container"/>
   <main class="container">
     
     <ContaPersonaggi/>

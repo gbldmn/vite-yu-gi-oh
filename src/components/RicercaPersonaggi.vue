@@ -13,6 +13,7 @@ export default {
 
 <template>
     <div>
-        <input type="text" placeholder="Ricerca carte" v-model="store.TestoRicerca">
+        <input type="text" placeholder="Ricerca carte" v-model="store.testoRicerca">
+        <button @click="$emit('nomeEmit')">ricerca</button>
     </div>
 </template>
