@@ -33,9 +33,18 @@
                 // //    const datiApi = res.data.data
                 // //    this.store.arrayCarte = datiApi
                 // // })
-
+                axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+                    .then((res)=> {
+    
+                        const datiApiArchetype = res.data
+                        store.arrayArchetypes = datiApiArchetype
+                        
+                        
+                    })
+                 console.log(store.testoRicerca);
                 if( store.testoRicerca !== '' ){
-                    axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${store.testoRicerca}&num=9&offset=0`) 
+                
+                    axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${store.testoRicerca}&num=9&offset=0`) 
                     .then((res)=> {
                         const datiApi = res.data.data
                         store.arrayCarte = datiApi
@@ -43,7 +52,6 @@
                 } else {
                      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=9&offset=0')
                     .then( (res) =>{
-                     console.log(res.data.data)
 
 
 
