@@ -4,13 +4,15 @@
     import HeaderComp from './components/HeaderComp.vue'
     import PersonagiComp from './components/PersonagiComp.vue'
     import ContaPersonaggi from './components/ContaPersonaggi.vue';
+    import RicercaPersonaggi from './components/RicercaPersonaggi.vue'
 
     export default{
         name: 'app',
         components: {
             HeaderComp,
             PersonagiComp,
-            ContaPersonaggi
+            ContaPersonaggi,
+            RicercaPersonaggi
         },
         data(){
             return{
@@ -22,7 +24,7 @@
         },
         methods: {
             chiamataApi(){
-                            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=12&offset=0')
+                            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=9&offset=0')
                 .then( (res) =>{
                    console.log(res.data.data)
 
@@ -38,8 +40,11 @@
 </script>
 
 <template>
+  
   <HeaderComp :titoloProps=" 'YU-GI-HO API' "/>
+  <RicercaPersonaggi class="container"/>
   <main class="container">
+    
     <ContaPersonaggi/>
     <PersonagiComp/>
   </main>
